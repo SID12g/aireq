@@ -24,7 +24,7 @@ function GoogleLogin() {
   return (
     <TouchableOpacity
       style={styles.login}
-      onPress={() => navgation.navigate('Main')}>
+      onPress={() => navgation.navigate('ChildNavigator')}>
       <Image
         style={styles.googleLogo}
         source={require('../../../assets/images/google_login.png')}
