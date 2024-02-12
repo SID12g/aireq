@@ -10,7 +10,9 @@ const Tab = createBottomTabNavigator();
 
 export default function ChildNavigator() {
   return (
-    <Tab.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{headerShown: false, tabBarActiveTintColor: 'black'}}>
       <Tab.Screen name="Conversation" component={Conversation} />
       <Tab.Screen name="Feed" component={Feed} />
       <Tab.Screen name="Home" component={Home} />
