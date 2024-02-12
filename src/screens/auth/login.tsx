@@ -1,3 +1,5 @@
+import {ParamListBase, useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -18,8 +20,11 @@ export default function Login() {
 }
 
 function GoogleLogin() {
+  const navgation = useNavigation<StackNavigationProp<ParamListBase>>();
   return (
-    <TouchableOpacity style={styles.login}>
+    <TouchableOpacity
+      style={styles.login}
+      onPress={() => navgation.navigate('Main')}>
       <Image
         style={styles.googleLogo}
         source={require('../../../assets/images/google_login.png')}
@@ -30,7 +35,10 @@ function GoogleLogin() {
 }
 
 const styles = StyleSheet.create({
-  root: {flex: 1},
+  root: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   imageWrap: {
     flex: 1,
     justifyContent: 'flex-end',
